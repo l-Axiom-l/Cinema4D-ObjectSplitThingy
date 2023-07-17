@@ -48,7 +48,6 @@ def split(obj, index, par):
     occindex = []
     count = 0
 
-    # travers through all polygons and extract those from the selection to a new polygonobject
 
     for i in xrange(maxpolies):
         if polyselection.IsSelected(i):
@@ -68,10 +67,6 @@ def AddPoly(op,newop,poly,count,occindex,):
     index = (poly.a, poly.b, poly.c, poly.d)
     newindex = []
 
-  # traversing through the actual point indices
-  # write unique points to the newobject
-  # write a new index list to assign them to the new polygon accordingly
-
     for nr in index:
         if nr not in occindex:
             occindex.append(nr)
@@ -84,7 +79,6 @@ def AddPoly(op,newop,poly,count,occindex,):
             newop.ResizeObject(pointcount, count + 1)
             newindex.append(occindex.index(nr))
 
-  # write the new polygon
 
     newop.SetPolygon(count, c4d.CPolygon(newindex[0], newindex[1],
                      newindex[2], newindex[3]))
