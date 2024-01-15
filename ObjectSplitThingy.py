@@ -2,9 +2,6 @@ import c4d
 from c4d import gui
 from c4d import utils
 
-
-# Welcome to the world of Python
-
 def main():
     obj = GetAllObjects()
     obj = list(filter(lambda x: any(tag.GetType() == c4d.Tpolygonselection for tag in x.GetTags()), obj))
